@@ -41,9 +41,9 @@ class ViewController: UIViewController {
     private func setupColorView() {
         colorView.layer.cornerRadius = 30
         self.colorView.backgroundColor = UIColor(
-            red: 0.5,
-            green: 0.5,
-            blue: 0.5,
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
             alpha: 1.0
         )
     }
