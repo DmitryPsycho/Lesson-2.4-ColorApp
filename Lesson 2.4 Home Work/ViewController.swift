@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         setupColorView()
+        setupColorValues()
     }
     
     @IBAction func colorChangeWithSliders() {
@@ -31,11 +32,12 @@ class ViewController: UIViewController {
             alpha: 1.0
         )
         
-        redValue.text = "\(round(redSlider.value * 100) / 100)"
-        greenValue.text = "\(round(greenSlider.value * 100) / 100)"
-        blueValue.text = "\(round(blueSlider.value * 100) / 100)"
+        redValue.text = String(format: "%.2f", redSlider.value)
+        greenValue.text = String(format: "%.2f", greenSlider.value)
+        blueValue.text = String(format: "%.2f", blueSlider.value)
         
     }
+    
     private func setupColorView() {
         colorView.layer.cornerRadius = 30
         self.colorView.backgroundColor = UIColor(
@@ -44,7 +46,12 @@ class ViewController: UIViewController {
             blue: 0.5,
             alpha: 1.0
         )
-        
+    }
+    
+    private func setupColorValues() {
+        redValue.text = String(format: "%.2f", redSlider.value)
+        greenValue.text = String(format: "%.2f", greenSlider.value)
+        blueValue.text = String(format: "%.2f", blueSlider.value)
     }
 }
 
